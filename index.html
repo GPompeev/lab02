@@ -1,0 +1,485 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>planB</title>
+    <style>
+        body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.auth{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #68829e;
+    padding: 18px 25px;
+}
+
+.signin_btn{
+    background-color: white;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.signon_link{
+   color: white; 
+   font-size: 18px;
+}
+
+.title{
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: #e2e8e4;
+}
+
+.nav{
+    background-color: #e2e8e4;
+    margin-top: 8px;
+    padding: 5px 0px;
+}
+
+.nav_items{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.nav_items li{
+    color: #444c5c;
+    font-size: 16px;    
+}
+
+.nav_items li:hover{
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.color{
+    background-color: #F2F9DE;
+    margin-top: 8px;
+}
+
+.days{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.yestarday{
+    text-decoration: none;
+    font-size: 16px;
+    color: #505160;
+    padding: 0 40px;
+}
+
+.yestarday:hover{
+    color: #68829e;
+    font-size: 18px;
+}
+
+.today{
+    font-size: 23px;
+}
+
+.do{
+    margin-top: 40px;
+    padding: 0px 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.goals{
+    width: 60%;
+}
+
+.goal{
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-left: 10px solid #ce5a57;
+    padding: 15px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    margin-right: 30px;
+}
+
+.input{
+    margin-right: 25px;
+    width: 20px;
+    height: 20px;
+}
+
+.blue{
+    border-left: 10px solid #1995ad;
+}
+
+.descr_what{
+    font-size: 20px;
+}
+
+.descr_when{
+    color: #68829e;
+}
+
+.add{
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #e1b16a;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 40%;
+    margin-bottom: 70px;
+}
+
+.affim{
+    max-width: 300px;
+    background-color: #fce6df;
+    padding: 20px;
+    border: 1px solid #444c5c;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.aff_title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+hr{
+    color: #000
+}
+
+.aff_descr{
+    text-align: center;
+}
+
+.party{
+    background-color: #fcfaae;
+    border-radius: 10px;
+}
+
+.set{
+    background-color: #c0da94;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #444c5c;
+}
+
+
+.done{
+    
+}
+
+.item_title{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.green{
+    border-left: 10px solid #b2f048;
+}
+
+.category{
+    max-width: 300px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #444c5c;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.color_all{
+    display: inline-block;
+    background-color: #1995ad;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.c_blue{
+    background-color: #1995ad;
+}
+
+.c_green{
+    background-color: #b2f048;
+}
+
+.c_yallow{
+    background-color: #f0fd39;
+}
+
+.c_red{
+    background-color: #ce5a57;
+}
+
+@media (max-width: 800px){
+    .do{
+        display: block;
+    }
+
+    .goals {
+        width: 100%;
+    }
+
+    .affim{
+        width: 100%;
+    }
+
+    .category{
+        width: 100%;
+    }
+}
+
+@media (max-width: 570px){
+    .yestarday{
+        display: none;
+    }
+
+    .days{
+        justify-content: center;
+    }
+
+    .title{
+        display: none;
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+
+            <div class="auth">
+                <button class="signin_btn">Войти</button>
+                <h1 class="title">PLAN_B</h1>
+                <a href="#" class="signon_link">Зарегистрироваться</a>
+            </div>
+            <div class="i"></div>
+            <nav class="nav">
+                <ul class="nav_items">
+                    <li>главная</li>
+                    <li>неделя</li>
+                    <li>месяц</li>
+                    <li>год</li>
+                </ul>
+            </nav>
+        </div>
+        
+    </header>
+
+    <section class="main">
+        <div class="container color">
+            <div class="days">
+                <a href="" class="yestarday">30 ноября</a>
+                <div class="today">
+                    <div class="day">
+                        СЕГОДНЯ
+                    </div>
+                    <div class="data">
+                        1 декабря
+                    </div>
+                </div>
+                <a href="#" class="yestarday">2 декабря</a>
+            </div>
+
+            <div class="do">
+
+                
+
+
+
+                <div class="goals">
+
+                    <div class="item_title">
+                        по планам сегодня:
+                    </div>
+                    <div class="goal">
+                        <input type="radio" name="" value="" class="input">
+                        <div class="goal_descr">
+                            <div class="descr_what">
+                                написать письмо деду морозу
+                            </div>
+                            <div class="descr_when">
+                                сегодня в 14:03
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal">
+                        <input type="radio" name="" value="" class="input">
+                        <div class="goal_descr">
+                            <div class="descr_what">
+                                сдать лабу по веб-проге
+                            </div>
+                            <div class="descr_when">
+                                сегодня в 14:03
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal">
+                        <input type="radio" name="" value="" class="input">
+                        <div class="goal_descr">
+                            <div class="descr_what">
+                                тренировка 
+                            </div>
+                            <div class="descr_when">
+                                сегодня в 11:19
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal blue">
+                        <input type="radio" name="" value="" class="input">
+                        <div class="goal_descr">
+                            <div class="descr_what">
+                                собрание вызда в ягодное 
+                            </div>
+                            <div class="descr_when">
+                                сегодня в 14:03
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal blue">
+                        <input type="radio" name="" value="" class="input">
+                        <div class="goal_descr">
+                            <div class="descr_what">
+                                написать эссе по "науке о жизни"
+                            </div>
+                            <div class="descr_when">
+                                сегодня в 14:03
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="add">
+                        добавить
+                    </div>
+
+                    <div class="done">
+                        <div class="items">
+                            <div class="item_title">
+                                выполнено!
+                            </div>
+
+                            <div class="goal green">
+                                <input type="radio" checked name="" value="" class="input">
+                                <div class="goal_descr">
+                                    <div class="descr_what ">
+                                        прибраться в комнате
+                                    </div>
+                                    <div class="descr_when">
+                                        сегодня в 14:03
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="goal green">
+                                <input type="radio" checked name="" value="" class="input">
+                                <div class="goal_descr">
+                                    <div class="descr_what">
+                                        погулять с джеком
+                                    </div>
+                                    <div class="descr_when">
+                                        сегодня в 14:03
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="other">
+
+                    <div class="affim">
+                       <div class="aff_title">
+                           Aффирмация на день
+                       </div>
+                       <hr>
+                       <div class="aff_descr">
+                          У меня все хорошо и с каждым днем моя жизнь становится еще лучше!
+                       </div>
+                    
+                    </div>
+
+                    <div class="category">
+                        <div class="aff_title">
+                            категории
+                        </div>
+
+                        <hr>
+
+                            <div class="color_all c_blue">
+                            </div>
+                            
+                            - учеба <br>
+                            <div class="color_all c_green">
+    
+                            </div>
+                              - домашние <br>
+                            <div class="color_all c_yallow">
+                                
+                            </div>
+                            - неприятные <br>
+    
+                            <div class="color_all c_red">
+                               
+                            </div>
+
+                            - важные
+                    </div>
+
+                    <div class="affim party">
+                        <div class="aff_title">
+                            ближайшее мероприяте
+                        </div>
+                        <hr>
+                        <div class="aff_descr">
+                            вечеринка там-то там-то в честь нового года (купить подарки!!!)
+                        </div>
+                    </div>  
+                    
+                    <div class="set aff_title">
+                        статистика
+                    </div> 
+
+                    <div class="set aff_title">
+                        настройка 
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
